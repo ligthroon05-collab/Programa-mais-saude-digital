@@ -1,0 +1,186 @@
+import React from "react";
+
+// Evento: template responsivo em React + Tailwind // Instruções: //  - Substitua textos marcados com [INSIRA AQUI] //  - Para o formulário de inscrição, cole o link do Google Forms em REGISTRATION_FORM_URL //  - Para mapa interativo, insira seu token Mapbox em MAPBOX_TOKEN e ajuste coordenadas //  - Este arquivo exporta um componente padrão que pode ser usado em qualquer app React
+
+const REGISTRATION_FORM_URL = "[INSIRA_LINK_GOOGLE_FORMS_AQUI]"; const MAPBOX_TOKEN = "[INSIRA_MAPBOX_TOKEN_AQUI]"; // opcional
+
+export default function EventLanding() { return ( <div className="min-h-screen bg-gray-50 text-gray-900 font-sans"> <header className="bg-gradient-to-r from-emerald-600 to-emerald-400 text-white"> <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between"> <div className="flex items-center gap-4"> <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center text-xl font-bold">LP</div> <div> <h1 className="text-xl font-semibold">[NOME DO EVENTO / PREFEITURA]</h1> <p className="text-sm opacity-90">Juntos por uma Lábrea melhor — [DATA]</p> </div> </div>
+
+<nav className="hidden md:flex gap-6 items-center">
+        <a href="#about" className="hover:underline">Sobre</a>
+        <a href="#program" className="hover:underline">Programação</a>
+        <a href="#speakers" className="hover:underline">Palestrantes</a>
+        <a href="#subscribe" className="px-4 py-2 bg-white text-emerald-600 rounded-md shadow-sm">Inscreva-se</a>
+      </nav>
+        <a href="#psdi" className="hover:underline">Programa Saúde Digital Integrado</a>
+    </div>
+  </header>
+
+  <main className="max-w-6xl mx-auto px-6 py-12">
+    {/* HERO */}
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">[Título forte e direto, ex: Paz e Progresso para Lábrea]</h2>
+        <p className="mt-4 text-lg text-gray-700">[Descrição curta: objetivo do evento / campanha em 1–2 linhas. Ex: Encontro comunitário para discutir saúde, educação e infraestrutura em Lábrea.]</p>
+
+        <div className="mt-6 flex gap-4">
+          <a href="#subscribe" className="px-5 py-3 bg-emerald-600 text-white rounded-md shadow">Inscreva-se</a>
+          <a href="#program" className="px-5 py-3 border border-emerald-600 rounded-md">Ver Programação</a>
+        </div>
+
+        <ul className="mt-8 grid grid-cols-2 gap-4 text-sm text-gray-600">
+          <li><strong>Data:</strong> [01/08/2025]</li>
+          <li><strong>Local:</strong> Sítio da Paz Church, Lábrea</li>
+          <li><strong>Entrada:</strong> Gratuita / [valor]</li>
+          <li><strong>Contato:</strong> [telefone] • [email]</li>
+        </ul>
+      </div>
+
+      <div className="rounded-xl bg-white shadow p-6">
+        {/* Placeholder para imagem ou vídeo */}
+        <div className="h-64 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-lg flex items-center justify-center">
+          <span className="text-gray-400">Imagem / Vídeo do evento (substituir)</span>
+        </div>
+
+        <div className="mt-4 text-sm text-gray-600">Compartilhe nas redes: <a href="#" className="underline">Facebook</a> • <a href="#" className="underline">Instagram</a></div>
+      </div>
+    </section>
+
+    {/* ABOUT */}
+    <section id="about" className="mt-16">
+      <h3 className="text-2xl font-semibold">Sobre o evento</h3>
+      <p className="mt-4 text-gray-700">[Texto maior explicando o propósito, público-alvo e resultados esperados. Ex: "Reunir a comunidade para debater prioridades e construir um plano de ação colaborativo."]</p>
+    </section>
+
+    {/* PROGRAM */}
+    <section id="program" className="mt-12">
+      <h3 className="text-2xl font-semibold">Programação</h3>
+      <div className="mt-6 grid gap-4">
+        {/* Exemplo de item de programação */}
+        <div className="p-4 bg-white rounded-lg shadow-sm flex items-start gap-4">
+          <div className="w-20 text-sm text-gray-500">09:00</div>
+          <div>
+            <div className="font-semibold">Abertura e Boas-vindas</div>
+            <div className="text-sm text-gray-600">[Responsável / Observações]</div>
+          </div>
+        </div>
+
+        <div className="p-4 bg-white rounded-lg shadow-sm flex items-start gap-4">
+          <div className="w-20 text-sm text-gray-500">10:00</div>
+          <div>
+            <div className="font-semibold">Palestra: Saúde Comunitária</div>
+            <div className="text-sm text-gray-600">[Palestrante / Duração]</div>
+          </div>
+        </div>
+
+        {/* Adicione mais itens conforme necessário */}
+      </div>
+    </section>
+
+    {/* SPEAKERS */}
+    <section id="speakers" className="mt-12">
+      <h3 className="text-2xl font-semibold">Palestrantes</h3>
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Card de exemplo */}
+        <div className="p-4 bg-white rounded-lg shadow-sm">
+          <div className="h-32 bg-gray-100 rounded-md flex items-center justify-center">Foto</div>
+          <div className="mt-3">
+            <div className="font-semibold">[Nome do Palestrante]</div>
+            <div className="text-sm text-gray-600">[Cargo / Instituição]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* MAP + LOCATION */}
+    <section id="location" className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div>
+        <h3 className="text-2xl font-semibold">Localização</h3>
+        <p className="mt-4 text-gray-700">Sítio da Paz Church — [Endereço completo]</p>
+        <ul className="mt-4 text-sm text-gray-600">
+          <li>Como chegar: [instruções de acesso]</li>
+          <li>Estacionamento: [sim/não]</li>
+        </ul>
+      </div>
+
+      <div className="rounded-lg overflow-hidden bg-white shadow-sm">
+        {/* Mapbox placeholder - substitua pelo mapa real usando Mapbox GL JS */}
+        <div className="h-64 flex items-center justify-center text-gray-400">Mapa interativo (substituir por Mapbox)</div>
+      </div>
+    </section>
+
+    {/* REGISTRATION */}
+    <section id="subscribe" className="mt-12 bg-white p-6 rounded-lg shadow-sm">
+      <h3 className="text-2xl font-semibold">Inscrições</h3>
+      <p className="mt-2 text-gray-700">Garanta sua vaga preenchendo o formulário de inscrição.</p>
+
+      <div className="mt-4">
+        <a
+          href={REGISTRATION_FORM_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-md shadow"
+        >
+          Abrir formulário de inscrição
+        </a>
+      </div>
+
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
+        <div>
+          <div className="font-semibold">Vagas</div>
+          <div>[Quantidade / Observações]</div>
+        </div>
+
+        <div>
+          <div className="font-semibold">Transmissão</div>
+          <div>[Ao vivo / Gravado / Link]</div>
+        </div>
+
+        <div>
+          <div className="font-semibold">Suporte</div>
+          <div>[Telefone / WhatsApp]</div>
+        </div>
+      </div>
+    </section>
+
+    {/* CONTACT */}
+    <section id="contact" className="mt-12">
+      <h3 className="text-2xl font-semibold">Contato</h3>
+      <p className="mt-4 text-gray-700">Para dúvidas, entre em contato: [email] • [telefone]</p>
+    </section>
+  
+    {/* PSDI PAGE */}
+    <section id="psdi" className="mt-20">
+      <h2 className="text-3xl font-bold text-emerald-600">Programa Saúde Digital Integrado</h2>
+      <p className="mt-4 text-gray-700">Eco‑sistema de saúde conectado para UBS, hospital e gestão municipal.</p>
+      <div className="mt-8 grid md:grid-cols-3 gap-6">
+        <div className="p-6 bg-white rounded-xl shadow-sm">
+          <h3 className="font-semibold text-lg">Prontuário Único</h3>
+          <p className="text-sm text-gray-600">Histórico clínico centralizado e acessível em tempo real.</p>
+        </div>
+        <div className="p-6 bg-white rounded-xl shadow-sm">
+          <h3 className="font-semibold text-lg">App para ACS</h3>
+          <p className="text-sm text-gray-600">Visitas domiciliares, alertas, encaminhamentos e cadastro familiar.</p>
+        </div>
+        <div className="p-6 bg-white rounded-xl shadow-sm">
+          <h3 className="font-semibold text-lg">Painel de Gestão</h3>
+          <p className="text-sm text-gray-600">Indicadores, vigilância, mapas de risco e auditoria.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer className="bg-gray-900 text-gray-200 mt-16">
+    <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <div className="font-semibold">[Organização / Prefeitura de Lábrea]</div>
+        <div className="text-sm text-gray-400">© {new Date().getFullYear()} Todos os direitos reservados</div>
+      </div>
+
+      <div className="text-sm text-gray-400">Desenvolvido por João • <a href="#" className="underline">Política de Privacidade</a></div>
+    </div>
+  </footer>
+</div>
+
+); }
